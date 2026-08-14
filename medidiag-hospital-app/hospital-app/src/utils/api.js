@@ -1,6 +1,6 @@
 import { DEFAULT_CONFIDENCE_THRESHOLD } from './diagnosisEngine';
 
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
 /**
  * Fetches the canonical, backend-defined symptom list (the model's fixed

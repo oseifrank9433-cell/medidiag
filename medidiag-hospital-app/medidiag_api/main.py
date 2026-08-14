@@ -1,3 +1,4 @@
+import os
 from datetime import datetime, timezone
 from typing import List
 
@@ -15,9 +16,16 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="MediDiag API")
 
+allowed_origins = [
+    origin.strip()
+    for origin in os.getenv("CORS_ORIGINS", "http://localhost:5173").split(",")
+    if origin.strip()
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=allowed_origins,
+    allow_origin_regex=r"https://.*\\.up\\.railway\\.app|http://localhost:5173",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
