@@ -1,6 +1,6 @@
 {
   "framework": "vite",
-  "installCommand": "npm install --prefix medidiag-hospital-app/hospital-app",
-  "buildCommand": "npm --prefix medidiag-hospital-app/hospital-app run build",
-  "outputDirectory": "medidiag-hospital-app/hospital-app/dist"
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist"
 }
