@@ -2,6 +2,7 @@
 **/.venv/
 venv/
 **/venv/
-__pycache__/
-**/__pycache__/
-*.pyc
+**/venv/**
+**/__pycache__/**
+**/*.pyc
+**/site-packages/**
